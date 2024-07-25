@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.0"
+agp = "8.4.2"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -7,7 +7,12 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.3"
 activityCompose = "1.9.0"
-composeBom = "2023.08.00"
+composeBom = "2024.06.00"
+retrofit = "2.9.0"
+converter-moshi ="2.5.0"
+retrofit-coroutines-adapter ="0.9.2"
+room = "2.6.1"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,6 +29,23 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+##### Retrofit Dependency
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+moshi-converter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "converter-moshi" }
+retrofit-adapter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlin-coroutines-adapter", version.ref = "retrofit-coroutines-adapter" }
+
+
+#### Room Dependency
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+
+
+[bundles]
+
+
+retrofit-bundle = ["retrofit-core","moshi-converter","retrofit-adapter"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
